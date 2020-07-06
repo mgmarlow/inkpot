@@ -1,0 +1,11 @@
+{
+  "name": "recycle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mgmarlow/recycle.git",
+  "author": "Graham Marlow <mgmarlow@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "inkjs": "^1.11.0"
+  }
+}
