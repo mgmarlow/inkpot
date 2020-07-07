@@ -6,6 +6,10 @@
   "author": "Graham Marlow <mgmarlow@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "inkjs": "^1.11.0"
+    "inkjs": "^1.11.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "scripts": {
+    "build": "parcel build ./src/main.js -d public -o bundle.js --no-source-maps"
   }
 }

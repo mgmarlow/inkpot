@@ -1,2 +1,4 @@
 *.ink.json
 node_modules/
+.cache/
+bundle.js

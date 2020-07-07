@@ -1,5 +1,5 @@
-const Story = require("inkjs").Story;
-const json = require("../story/main.ink.json");
+import { Story } from 'inkjs'
+import json from '../story/main.ink.json'
 
-const story = new Story(json);
-console.log(story.ContinueMaximally());
+const story = new Story(json)
+console.log(story.ContinueMaximally())
