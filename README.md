@@ -4,18 +4,18 @@ An interactive fiction project made with [ink](https://github.com/inkle/ink).
 
 ## Prerequisites
 
-Download [inklecate](https://github.com/inkle/ink/releases).
+- Download [inklecate](https://github.com/inkle/ink/releases).
+- Download [yarn](https://yarnpkg.com/).
+- Install packages `yarn install`.
 
 ## Run
 
 ```
-inklecate -p ./story/main.ink
+make run
 ```
 
 ## Build
 
 ```
-inklecate ./story/main.ink
+make
 ```
-
-This generates a `.ink.json` file that can be used with [inkjs](https://github.com/y-lohse/inkjs) to create a playable web version of the project.
