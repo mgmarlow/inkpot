@@ -8,6 +8,8 @@ An interactive fiction project made with [ink](https://github.com/inkle/ink).
 - Download [yarn](https://yarnpkg.com/).
 - Install packages `yarn install`.
 
+Place the entry point to your story in `./story/main.ink`.
+
 ## Run
 
 ```
@@ -19,3 +21,5 @@ make run
 ```
 make
 ```
+
+The story will be playable and distributable from `./public/index.html`.
