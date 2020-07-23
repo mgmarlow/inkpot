@@ -1,22 +1,28 @@
 # Recycle
 
-An interactive fiction project made with [ink](https://github.com/inkle/ink).
+A template for creating interactive fiction with [ink](https://github.com/inkle/ink).
+
+![](./img/screen.png)
 
 ## Prerequisites
 
+- Use this template in Github to create your new project
 - Download [inklecate](https://github.com/inkle/ink/releases).
 - Download [yarn](https://yarnpkg.com/).
 - Install packages `yarn install`.
-
-Place the entry point to your story in `./story/main.ink`.
+- Replace `./story/main.ink` with your story
 
 ## Run
+
+View your story in the `inklecate` CLI:
 
 ```
 make run
 ```
 
 ## Build
+
+Build your story into JavaScript:
 
 ```
 make
