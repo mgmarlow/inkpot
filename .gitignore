@@ -1,5 +1,5 @@
 *.ink.json
 node_modules/
 .cache/
-bundle.js
-bundle.js.map
+index.js
+index.js.map
