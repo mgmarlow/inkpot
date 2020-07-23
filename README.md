@@ -2,7 +2,7 @@
 
 A template for creating interactive fiction with [ink](https://github.com/inkle/ink).
 
-![](./img/screen.png)
+![](./img/example.gif)
 
 ## Prerequisites
 
