@@ -1,0 +1,25 @@
+body,
+html,
+* {
+  font-family: 'IBM Plex Serif', serif;
+}
+
+body {
+  width: 40%;
+  margin: 0 auto;
+  background-color: #eee;
+}
+
+p {
+  font-size: 20px;
+  color: rgb(51, 51, 51);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgb(51, 51, 51);
+}
