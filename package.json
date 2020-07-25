@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "inklecate ./story/main.ink && parcel build ./src/main.js -d public -o index.js --no-source-maps",
-    "watch": "watch \"yarn run build\" story --filter=./scripts/watchfilter.js",
+    "watch": "watch \"yarn run build\" story src --filter=./scripts/watchfilter.js",
     "serve": "serve public",
     "start": "concurrently \"yarn watch\" \"yarn serve\"",
     "deploy": "yarn run build && gh-pages -d public"

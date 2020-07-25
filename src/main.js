@@ -4,6 +4,7 @@ import json from '../story/main.ink.json'
 // Adapted from inkjs examples:
 // https://github.com/y-lohse/inkjs/blob/master/templates/browser_with_server/main.js
 
+let clickedOnce
 const story = new Story(json)
 const storyContainer = document.querySelector('#story')
 continueStory()
@@ -52,12 +53,17 @@ function continueStory() {
     )
   })
 
-  storyContainer.lastChild.scrollIntoView({ behavior: 'smooth' })
+  if (clickedOnce) {
+    storyContainer.lastChild.scrollIntoView({ behavior: 'smooth' })
+  }
 }
 
 function handleChoiceClick(event, choiceIndex) {
   // Don't follow <a> link
   event.preventDefault()
+
+  // Enable scrolling
+  clickedOnce = true
 
   const hrElement = document.createElement('hr')
   storyContainer.appendChild(hrElement)
