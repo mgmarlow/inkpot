@@ -10,6 +10,10 @@
     "parcel-bundler": "^1.12.4"
   },
   "scripts": {
-    "build": "parcel build ./src/main.js -d public -o index.js --no-source-maps"
+    "build": "parcel build ./src/main.js -d public -o index.js --no-source-maps",
+    "deploy": "gh-pages -d public"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
