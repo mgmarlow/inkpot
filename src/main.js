@@ -64,8 +64,8 @@ function handleChoiceClick(event, choiceIndex) {
 
   // Remove all existing choices
   const existingChoices = storyContainer.querySelectorAll('p.choice')
-  existingChoices.forEach(choice => {
-    choice.parentNode.removeChild(choice)
+  existingChoices.forEach(choiceEl => {
+    choiceEl.parentNode.removeChild(choiceEl)
   })
 
   // Tell the story where to go next
