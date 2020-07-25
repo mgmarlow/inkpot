@@ -1,36 +1,42 @@
-# Recycle
+# Inkpot
 
 A template for creating interactive fiction with [ink](https://github.com/inkle/ink).
 
 [View the demo](https://mgmarlow.github.io/recycle/)
 
+## Roadmap
+
+- [x] Watchmode
+- [ ] Story save states
+
 ## Prerequisites
 
-- Use this template in Github to create your new project
-- Download [inklecate](https://github.com/inkle/ink/releases).
-- Download [yarn](https://yarnpkg.com/).
-- Install packages `yarn install`.
+- [inklecate](https://github.com/inkle/ink/releases).
+- [yarn](https://yarnpkg.com/) or [npm](https://nodejs.org/en/)
+
+## Installation
+
+- [Use this template](https://github.com/mgmarlow/recycle/generate) to create your new project
+- Install packages `yarn install` or `npm install`.
 - Replace `./story/main.ink` with your story
 
-## Run
-
-View your story in the `inklecate` CLI:
+Once you're all set up, use the following command to run Inkpot with a development server:
 
 ```
-make run
+yarn start
 ```
 
-## Build
+## Distribute
+
+### Build your story
 
 Build your story into JavaScript:
 
 ```
-make
+yarn build
 ```
 
 The story will be playable and distributable from `./public/index.html`.
-
-## Distribute
 
 ### Itch.io
 
@@ -45,5 +51,5 @@ Distributing a game on itch.io:
 Assuming that your project has a public Github repository, you can publish to [Github pages](https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
 ```
-make deploy
+yarn deploy
 ```

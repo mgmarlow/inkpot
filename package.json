@@ -1,19 +1,25 @@
 {
-  "name": "recycle",
+  "name": "inkpot",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:mgmarlow/recycle.git",
   "author": "Graham Marlow <mgmarlow@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "inkjs": "^1.11.0",
-    "parcel-bundler": "^1.12.4"
+    "inkjs": "^1.11.0"
   },
   "scripts": {
-    "build": "parcel build ./src/main.js -d public -o index.js --no-source-maps",
+    "build": "inklecate ./story/main.ink && parcel build ./src/main.js -d public -o index.js --no-source-maps",
+    "watch": "watch \"yarn run build\" story --filter=./scripts/watchfilter.js",
+    "serve": "serve public",
+    "start": "concurrently \"yarn watch\" \"yarn serve\"",
     "deploy": "gh-pages -d public"
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "parcel-bundler": "^1.12.4",
+    "concurrently": "^5.2.0",
+    "gh-pages": "^3.1.0",
+    "serve": "^11.3.2",
+    "watch": "^1.0.2"
   }
 }
