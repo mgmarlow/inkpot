@@ -13,7 +13,7 @@
     "watch": "watch \"yarn run build\" story --filter=./scripts/watchfilter.js",
     "serve": "serve public",
     "start": "concurrently \"yarn watch\" \"yarn serve\"",
-    "deploy": "gh-pages -d public"
+    "deploy": "yarn run build && gh-pages -d public"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
