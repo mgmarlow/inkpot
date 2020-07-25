@@ -5,11 +5,25 @@ html,
 }
 
 body {
-  width: calc(100% - 40px);
-  max-width: 675px;
-  margin: 2rem auto;
-  padding-bottom: 4rem;
   background-color: #eee;
+}
+
+.title {
+  text-align: center;
+}
+
+.container {
+  width: calc(100% - 40px);
+  max-width: 700px;
+  max-height: 600px;
+  overflow: auto;
+  margin: 2rem auto;
+  padding: 1rem;
+  padding-bottom: 4rem;
+}
+
+hr {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 p {

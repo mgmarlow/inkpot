@@ -1,7 +1,7 @@
 import { Story } from 'inkjs'
 import json from '../story/main.ink.json'
 
-// Taken from inkjs examples:
+// Adapted from inkjs examples:
 // https://github.com/y-lohse/inkjs/blob/master/templates/browser_with_server/main.js
 
 const story = new Story(json)
@@ -14,39 +14,16 @@ function showAfter(delay, el) {
   }, delay)
 }
 
-function scrollToBottom() {
-  var progress = 0.0
-  var start =
-    window.pageYOffset ||
-    document.documentElement.scrollTop ||
-    document.body.scrollTop ||
-    0
-  var dist = document.body.scrollHeight - window.innerHeight - start
-  if (dist < 0) return
-
-  var duration = 300 + (300 * dist) / 100
-  var startTime = null
-  function step(time) {
-    if (startTime == null) startTime = time
-    var t = (time - startTime) / duration
-    var lerp = 3 * t * t - 2 * t * t * t
-    window.scrollTo(0, start + lerp * dist)
-    if (t < 1) requestAnimationFrame(step)
-  }
-  requestAnimationFrame(step)
-}
-
 function continueStory() {
-  var paragraphIndex = 0
-  var delay = 0.0
+  let delay = 0.0
 
   // Generate story text - loop through available content
   while (story.canContinue) {
     // Get ink to generate the next paragraph
-    var paragraphText = story.Continue()
+    const paragraphText = story.Continue()
 
     // Create paragraph element
-    var paragraphElement = document.createElement('p')
+    const paragraphElement = document.createElement('p')
     paragraphElement.innerHTML = paragraphText
     storyContainer.appendChild(paragraphElement)
 
@@ -57,9 +34,9 @@ function continueStory() {
   }
 
   // Create HTML choices from ink choices
-  story.currentChoices.forEach(function (choice) {
+  story.currentChoices.forEach(choice => {
     // Create paragraph with anchor element
-    var choiceParagraphElement = document.createElement('p')
+    const choiceParagraphElement = document.createElement('p')
     choiceParagraphElement.classList.add('choice')
     choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`
     storyContainer.appendChild(choiceParagraphElement)
@@ -69,25 +46,31 @@ function continueStory() {
     delay += 200.0
 
     // Click on choice
-    var choiceAnchorEl = choiceParagraphElement.querySelectorAll('a')[0]
-    choiceAnchorEl.addEventListener('click', function (event) {
-      // Don't follow <a> link
-      event.preventDefault()
-
-      // Remove all existing choices
-      var existingChoices = storyContainer.querySelectorAll('p.choice')
-      for (var i = 0; i < existingChoices.length; i++) {
-        var c = existingChoices[i]
-        c.parentNode.removeChild(c)
-      }
-
-      // Tell the story where to go next
-      story.ChooseChoiceIndex(choice.index)
-
-      // Aaand loop
-      continueStory()
-    })
+    const choiceAnchorEl = choiceParagraphElement.querySelectorAll('a')[0]
+    choiceAnchorEl.addEventListener('click', e =>
+      handleChoiceClick(e, choice.index),
+    )
   })
 
-  scrollToBottom()
+  storyContainer.lastChild.scrollIntoView({ behavior: 'smooth' })
+}
+
+function handleChoiceClick(event, choiceIndex) {
+  // Don't follow <a> link
+  event.preventDefault()
+
+  const hrElement = document.createElement('hr')
+  storyContainer.appendChild(hrElement)
+
+  // Remove all existing choices
+  const existingChoices = storyContainer.querySelectorAll('p.choice')
+  existingChoices.forEach(choice => {
+    choice.parentNode.removeChild(choice)
+  })
+
+  // Tell the story where to go next
+  story.ChooseChoiceIndex(choiceIndex)
+
+  // Aaand loop
+  continueStory()
 }
