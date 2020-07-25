@@ -2,7 +2,7 @@
 
 A template for creating interactive fiction with [ink](https://github.com/inkle/ink).
 
-[View the demo](https://mgmarlow.github.io/recycle/)
+[View the demo](https://mgmarlow.github.io/inkpot/)
 
 ## Roadmap
 
@@ -16,7 +16,7 @@ A template for creating interactive fiction with [ink](https://github.com/inkle/
 
 ## Installation
 
-- [Use this template](https://github.com/mgmarlow/recycle/generate) to create your new project
+- [Use this template](https://github.com/mgmarlow/inkpot/generate) to create your new project
 - Install packages `yarn install` or `npm install`.
 - Replace `./story/main.ink` with your story
 

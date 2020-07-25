@@ -2,7 +2,7 @@
   "name": "inkpot",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:mgmarlow/recycle.git",
+  "repository": "git@github.com:mgmarlow/inkpot.git",
   "author": "Graham Marlow <mgmarlow@gmail.com>",
   "license": "MIT",
   "dependencies": {
