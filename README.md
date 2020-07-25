@@ -1,4 +1,4 @@
-# Inkpot
+# ✒️ Inkpot
 
 A template for creating interactive fiction with [ink](https://github.com/inkle/ink).
 
